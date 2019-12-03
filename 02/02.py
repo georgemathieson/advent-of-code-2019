@@ -22,7 +22,7 @@ def processor(intcodes):
 example = [1, 9, 10, 3, 2, 3, 11, 0, 99, 30, 40, 50]
 expected = [3500, 9, 10, 70, 2, 3, 11, 0, 99, 30, 40, 50]
 actual = processor(example)
-assert expected == actual
+assert actual == expected
 
 # Puzzle input.
 with open('input') as puzzleInput:
