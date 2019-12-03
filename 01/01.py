@@ -27,7 +27,7 @@ print(part1)
 def calculate_fuel_including_fuel(mass):
     returnValue = 0
     fuel = calculate_fuel(mass)
-    if (fuel >= 0):
+    if (fuel > 0):
         returnValue = fuel + calculate_fuel_including_fuel(fuel)
     return returnValue
 
