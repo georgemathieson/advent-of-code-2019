@@ -1,8 +1,7 @@
 def manhattan_distance(x, y):
     return abs(x) + abs(y)
 
-
-# Map which x/y values change for a given direction.
+# Map which x/y values change by what value for a given direction.
 deltas = {
     'R': (1, 0),
     'L': (-1, 0),
@@ -37,9 +36,7 @@ pointsWire2 = find_points(wires[1])
 intersections = pointsWire1 & pointsWire2
 
 # Figure out the closest intersection.
-distances = []
-for x, y in intersections:
-    distances.append(manhattan_distance(x, y))
+distances = [manhattan_distance(x, y) for x, y in intersections]
 
 # Part 1 answer.
 print(min(distances))
