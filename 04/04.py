@@ -35,9 +35,8 @@ def get_possible_combinations_part_1(start, stop):
     possibleCombinations = 0
     for number in range(start, stop):
         # Two adjacent digits have to be the same.
-        if (contains_double(number)):
-            if (never_decreases(number)):
-                possibleCombinations += 1
+        if (never_decreases(number) and contains_double(number)):
+            possibleCombinations += 1
 
     return possibleCombinations
 
@@ -46,9 +45,8 @@ def get_possible_combinations_part_2(start, stop):
     possibleCombinations = 0
     for number in range(start, stop):
         # The two adjacent matching digits are not part of a larger group of matching digits.
-        if (contains_exact_double(number)):
-            if (never_decreases(number)):
-                possibleCombinations += 1
+        if (never_decreases(number) and contains_exact_double(number)):
+            possibleCombinations += 1
 
     return possibleCombinations
 
