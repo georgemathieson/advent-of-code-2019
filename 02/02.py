@@ -3,11 +3,11 @@ def processor(intcodes):
 
         # Each instruction is 4 long.
         if ((counter + 1) % 4 == 0):
-            instructionPointer = counter - 3
-            opcode = intcodes[instructionPointer]
-            pos1 = intcodes[instructionPointer + 1]
-            pos2 = intcodes[instructionPointer + 2]
-            pos3 = intcodes[instructionPointer + 3]
+            instruction_pointer = counter - 3
+            opcode = intcodes[instruction_pointer]
+            pos1 = intcodes[instruction_pointer + 1]
+            pos2 = intcodes[instruction_pointer + 2]
+            pos3 = intcodes[instruction_pointer + 3]
 
             if (opcode == 1):
                 intcodes[pos3] = intcodes[pos1] + intcodes[pos2]
@@ -25,8 +25,8 @@ actual = processor(example)
 assert actual == expected
 
 # Puzzle input.
-with open('input') as puzzleInput:
-    intcodes = [int(value) for value in puzzleInput.read().split(',')]
+with open('input') as puzzle_input:
+    intcodes = [int(value) for value in puzzle_input.read().split(',')]
 
 intcodes1 = intcodes.copy()
 
